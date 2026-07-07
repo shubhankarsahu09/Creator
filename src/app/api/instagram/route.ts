@@ -21,7 +21,7 @@ export async function GET() {
   }
 
   try {
-    const url = "https://graph.facebook.com/v19.0/" + accountId + "?fields=followers_count,media{media_url,like_count,comments_count}&access_token=" + token;
+    const url = "https://graph.facebook.com/v19.0/" + accountId + "?fields=followers_count,media{media_url,thumbnail_url,like_count,comments_count,media_type}&access_token=" + token;
     const res = await fetch(url);
     const json = await res.json();
 
@@ -46,7 +46,7 @@ export async function GET() {
         views: "N/A",
         likes: item.like_count ? formatNumber(item.like_count) : "0",
         comments: item.comments_count ? formatNumber(item.comments_count) : "0",
-        img: item.media_url || fallbackData.reels[idx].img
+        img: item.thumbnail_url || item.media_url || fallbackData.reels[idx]?.img || fallbackData.reels[0].img
       }));
     }
 

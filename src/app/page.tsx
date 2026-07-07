@@ -21,6 +21,7 @@ interface IgData {
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [igData, setIgData] = useState<IgData | null>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const imgLayerRef = useRef<HTMLDivElement>(null);
 
@@ -93,8 +94,19 @@ export default function Home() {
     };
   }, []);
 
-  // Removed broken API fetch for now since Meta API is glitching
-  // Fallback to manual config file
+  // Fetch Instagram Data
+  useEffect(() => {
+    async function fetchIgData() {
+      try {
+        const res = await fetch('/api/instagram');
+        const data = await res.json();
+        setIgData(data);
+      } catch (err) {
+        console.error("Failed to fetch IG data", err);
+      }
+    }
+    fetchIgData();
+  }, []);
 
   const headlineText = "I create viral, high-converting content that helps brands reach millions.";
   const words = headlineText.split(' ');
@@ -102,10 +114,10 @@ export default function Home() {
   const stats = [
     { label: "Total Reach (30D)", value: "2.4M" },
     { label: "Avg Reach/Reel", value: "150K" },
-    { label: "Followers", value: portfolioData.followers },
+    { label: "Followers", value: igData ? igData.followers : portfolioData.followers },
   ];
 
-  const recentReels = portfolioData.recentReels;
+  const recentReels = igData ? igData.reels : portfolioData.recentReels;
 
   return (
     <>
@@ -224,16 +236,16 @@ export default function Home() {
           <div className={styles.bGrid3}>
             <div className={styles.bCard}>
               <div className={styles.bCardLabel}>Followers</div>
-              <div className={styles.bCardValue}>{portfolioData.followers}</div>
+              <div className={styles.bCardValue}>{igData ? igData.followers : portfolioData.followers}</div>
             </div>
             <div className={styles.bCard}>
               <div className={styles.bCardLabel}>Engagement Rate</div>
-              <div className={styles.bCardValue}>{portfolioData.engagementRate}</div>
+              <div className={styles.bCardValue}>{igData ? igData.engagementRate : portfolioData.engagementRate}</div>
               <div className={styles.bCardSub}>98.62% Follower Engagement</div>
             </div>
             <div className={styles.bCard}>
               <div className={styles.bCardLabel}>Reach (30D)</div>
-              <div className={styles.bCardValue}>{portfolioData.reach}</div>
+              <div className={styles.bCardValue}>{igData ? igData.reach : portfolioData.reach}</div>
             </div>
           </div>
         </div>
