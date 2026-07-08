@@ -5,14 +5,11 @@ export async function GET() {
   const accountId = process.env.INSTAGRAM_ACCOUNT_ID;
 
   const fallbackData = {
-    followers: "7.2K",
-    engagementRate: "4.5%",
-    reach: "1.4M",
+    followers: "6",
+    engagementRate: "N/A",
+    reach: "N/A",
     reels: [
-      { id: 1, title: "Utopia", views: "340K", likes: "4.2K", comments: "128", img: "https://images.unsplash.com/photo-1616469829581-73993eb86b02?auto=format&fit=crop&w=600&q=80" },
-      { id: 2, title: "Aurbse", views: "120K", likes: "2.1K", comments: "45", img: "https://images.unsplash.com/photo-1516280440503-6c9fa5c62452?auto=format&fit=crop&w=600&q=80" },
-      { id: 3, title: "In_Cognita", views: "500K", likes: "12K", comments: "890", img: "https://images.unsplash.com/photo-1533750088811-7a8b16218df7?auto=format&fit=crop&w=600&q=80" },
-      { id: 4, title: "Haptify", views: "250K", likes: "3.4K", comments: "210", img: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=80" }
+      { id: 1, title: "PC Setup", views: "N/A", likes: "49", comments: "0", img: "https://images.unsplash.com/photo-1616469829581-73993eb86b02?auto=format&fit=crop&w=600&q=80" }
     ]
   };
 

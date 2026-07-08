@@ -112,9 +112,9 @@ export default function Home() {
   const words = headlineText.split(' ');
 
   const stats = [
-    { label: "Total Reach (30D)", value: "2.4M" },
-    { label: "Avg Reach/Reel", value: "150K" },
-    { label: "Followers", value: igData ? igData.followers : portfolioData.followers },
+    { label: "Total Reach (30D)", value: igData?.reach || portfolioData.reach },
+    { label: "Engagement Rate", value: igData?.engagementRate || portfolioData.engagementRate },
+    { label: "Followers", value: igData?.followers || portfolioData.followers },
   ];
 
   const recentReels = igData ? igData.reels : portfolioData.recentReels;
