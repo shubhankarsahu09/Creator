@@ -1,8 +1,54 @@
 "use client";
 
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
 import styles from './page.module.css';
+
+const CustomDropdown = ({ options, value, onChange, className }: any) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+  const selectedOption = options.find((o: any) => o.value === value);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setIsOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  return (
+    <div className={`${styles.customSelectWrapper} ${className || ''}`} ref={dropdownRef}>
+      <div 
+        className={`${styles.input} ${styles.customSelectHeader} ${isOpen ? styles.customSelectHeaderOpen : ''}`}
+        onClick={() => setIsOpen(!isOpen)}
+      >
+        <span>{selectedOption?.label || ''}</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#111" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ transition: 'transform 0.3s', transform: isOpen ? 'rotate(180deg)' : 'rotate(0)' }}>
+          <path d="M6 9l6 6 6-6" />
+        </svg>
+      </div>
+      {isOpen && (
+        <div className={styles.customSelectList}>
+          {options.map((opt: any) => (
+            <div 
+              key={opt.value} 
+              className={`${styles.customSelectItem} ${value === opt.value ? styles.customSelectItemSelected : ''}`}
+              onClick={() => {
+                onChange(opt.value);
+                setIsOpen(false);
+              }}
+            >
+              {opt.label}
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+};
 
 export default function CollabPage() {
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -104,32 +150,29 @@ export default function CollabPage() {
 
               <div className={styles.formGroup}>
                 <label className={styles.label} htmlFor="collabType">Collaboration Type</label>
-                <select 
-                  id="collabType"
-                  name="collabType" 
-                  className={styles.input} 
-                  required
+                <CustomDropdown
+                  options={[
+                    { value: 'paid', label: 'Paid Collab' },
+                    { value: 'barter', label: 'Barter Collab' }
+                  ]}
                   value={formData.collabType}
-                  onChange={handleChange}
-                >
-                  <option value="paid">Paid Collab</option>
-                  <option value="barter">Barter Collab</option>
-                </select>
+                  onChange={(val: string) => setFormData({ ...formData, collabType: val })}
+                />
               </div>
 
               {formData.collabType === 'paid' && (
                 <div className={styles.formGroup}>
                   <label className={styles.label} htmlFor="budget">Estimated Budget</label>
                   <div className={styles.budgetInputGroup}>
-                    <select 
-                      name="currency" 
-                      className={`${styles.input} ${styles.currencySelect}`}
+                    <CustomDropdown
+                      className={styles.currencySelectWrapper}
+                      options={[
+                        { value: 'USD', label: 'USD' },
+                        { value: 'INR', label: 'INR' }
+                      ]}
                       value={formData.currency}
-                      onChange={handleChange}
-                    >
-                      <option value="USD">USD</option>
-                      <option value="INR">INR</option>
-                    </select>
+                      onChange={(val: string) => setFormData({ ...formData, currency: val })}
+                    />
                     <input 
                       type="number"
                       id="budget"
