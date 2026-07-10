@@ -5,8 +5,8 @@
   align-items: center;
   justify-content: center;
   padding: 4rem 2rem;
-  background: #000;
-  color: #fff;
+  background: #fdfdfd;
+  color: #111;
   position: relative;
   overflow: hidden;
 }
@@ -19,7 +19,7 @@
   left: -10%;
   width: 50%;
   height: 50%;
-  background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0) 70%);
+  background: radial-gradient(circle, rgba(0,0,0,0.03) 0%, rgba(0,0,0,0) 70%);
   filter: blur(80px);
   z-index: 0;
 }
@@ -31,7 +31,7 @@
   right: -10%;
   width: 50%;
   height: 50%;
-  background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0) 70%);
+  background: radial-gradient(circle, rgba(0,0,0,0.02) 0%, rgba(0,0,0,0) 70%);
   filter: blur(80px);
   z-index: 0;
 }
@@ -43,7 +43,7 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  color: rgba(255,255,255,0.6);
+  color: rgba(0,0,0,0.6);
   text-decoration: none;
   font-size: 0.9rem;
   font-weight: 500;
@@ -51,27 +51,27 @@
   z-index: 10;
   padding: 0.5rem 1rem;
   border-radius: 2rem;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .backBtn:hover {
-  color: #fff;
-  background: rgba(255, 255, 255, 0.1);
+  color: #000;
+  background: rgba(0, 0, 0, 0.08);
   transform: translateX(-4px);
 }
 
 .formWrapper {
   width: 100%;
   max-width: 600px;
-  background: rgba(20, 20, 20, 0.6);
+  background: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.05);
   border-radius: 24px;
   padding: 3rem;
   z-index: 10;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.5);
   animation: slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   opacity: 0;
   transform: translateY(40px);
@@ -93,14 +93,14 @@
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
-  background: linear-gradient(135deg, #fff 0%, rgba(255,255,255,0.5) 100%);
+  background: linear-gradient(135deg, #111 0%, rgba(17,17,17,0.7) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   letter-spacing: -0.03em;
 }
 
 .subtitle {
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(0, 0, 0, 0.6);
   font-size: 1rem;
   line-height: 1.5;
 }
@@ -113,18 +113,18 @@
   display: block;
   font-size: 0.85rem;
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(0, 0, 0, 0.8);
   margin-bottom: 0.5rem;
   letter-spacing: 0.02em;
 }
 
 .input, .textarea {
   width: 100%;
-  background: rgba(0, 0, 0, 0.3);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 12px;
   padding: 1rem 1.2rem;
-  color: #fff;
+  color: #111;
   font-size: 1rem;
   font-family: inherit;
   transition: all 0.3s ease;
@@ -132,13 +132,13 @@
 }
 
 .input::placeholder, .textarea::placeholder {
-  color: rgba(255, 255, 255, 0.3);
+  color: rgba(0, 0, 0, 0.4);
 }
 
 .input:focus, .textarea:focus {
-  border-color: rgba(255, 255, 255, 0.4);
-  background: rgba(255, 255, 255, 0.05);
-  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.05);
+  border-color: rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.05);
+  box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.05);
 }
 
 .textarea {
@@ -151,8 +151,8 @@
   padding: 1.2rem;
   border-radius: 12px;
   border: none;
-  background: #fff;
-  color: #000;
+  background: #111;
+  color: #fff;
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
@@ -166,7 +166,7 @@
 
 .submitBtn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 .submitBtn:active {
@@ -183,13 +183,13 @@
 .successIcon {
   width: 64px;
   height: 64px;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.05);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0 auto 1.5rem;
-  color: #fff;
+  color: #111;
 }
 
 .successTitle {
@@ -199,7 +199,7 @@
 }
 
 .successDesc {
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(0, 0, 0, 0.6);
   font-size: 1rem;
 }
 
