@@ -35,7 +35,7 @@ export async function POST(req: Request) {
     }
 
     const mailOptions = {
-      from: `"${name}" <${process.env.SMTP_USER}>`, // Sender address (must be authorized in Brevo, or use the authenticated user)
+      from: `"${name} (via Website)" <shubhankarsahu82@gmail.com>`, // Must be your verified Brevo sender email
       replyTo: email,
       to: 'shubhankarsahu82@gmail.com', // Recipient address
       subject: `New Collaboration Request: ${brand} - ${collabType === 'paid' ? 'Paid Collab' : 'Barter Collab'}`,
@@ -68,8 +68,8 @@ export async function POST(req: Request) {
     await transporter.sendMail(mailOptions);
 
     return NextResponse.json({ message: 'Email sent successfully' }, { status: 200 });
-  } catch (error) {
+  } catch (error: any) {
     console.error('Failed to send email:', error);
-    return NextResponse.json({ error: 'Failed to send email' }, { status: 500 });
+    return NextResponse.json({ error: 'Failed to send email', details: error.message }, { status: 500 });
   }
 }
