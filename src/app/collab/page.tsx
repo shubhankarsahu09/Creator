@@ -119,6 +119,7 @@ export default function CollabPage() {
                     name="budget" 
                     className={styles.input} 
                     placeholder="e.g. 5000"
+                    min="0"
                     required
                     value={formData.budget}
                     onChange={handleChange}
