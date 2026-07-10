@@ -11,6 +11,7 @@ export default function CollabPage() {
     name: '',
     brand: '',
     email: '',
+    collabType: 'paid',
     budget: '',
     currency: 'USD',
     projectDetails: ''
@@ -102,30 +103,63 @@ export default function CollabPage() {
               </div>
 
               <div className={styles.formGroup}>
-                <label className={styles.label} htmlFor="budget">Estimated Budget</label>
-                <div className={styles.budgetInputGroup}>
-                  <select 
-                    name="currency" 
-                    className={`${styles.input} ${styles.currencySelect}`}
-                    value={formData.currency}
-                    onChange={handleChange}
-                  >
-                    <option value="USD">USD</option>
-                    <option value="INR">INR</option>
-                  </select>
+                <label className={styles.label} htmlFor="collabType">Collaboration Type</label>
+                <select 
+                  id="collabType"
+                  name="collabType" 
+                  className={styles.input} 
+                  required
+                  value={formData.collabType}
+                  onChange={handleChange}
+                >
+                  <option value="paid">Paid Collab</option>
+                  <option value="barter">Barter Collab</option>
+                </select>
+              </div>
+
+              {formData.collabType === 'paid' && (
+                <div className={styles.formGroup}>
+                  <label className={styles.label} htmlFor="budget">Estimated Budget</label>
+                  <div className={styles.budgetInputGroup}>
+                    <select 
+                      name="currency" 
+                      className={`${styles.input} ${styles.currencySelect}`}
+                      value={formData.currency}
+                      onChange={handleChange}
+                    >
+                      <option value="USD">USD</option>
+                      <option value="INR">INR</option>
+                    </select>
+                    <input 
+                      type="number"
+                      id="budget"
+                      name="budget" 
+                      className={styles.input} 
+                      placeholder="e.g. 5000"
+                      min="0"
+                      required
+                      value={formData.budget}
+                      onChange={handleChange}
+                    />
+                  </div>
+                </div>
+              )}
+
+              {formData.collabType === 'barter' && (
+                <div className={styles.formGroup}>
+                  <label className={styles.label} htmlFor="budget">Product / Service Offered</label>
                   <input 
-                    type="number"
+                    type="text"
                     id="budget"
                     name="budget" 
                     className={styles.input} 
-                    placeholder="e.g. 5000"
-                    min="0"
+                    placeholder="e.g. 1 Year Pro Subscription"
                     required
                     value={formData.budget}
                     onChange={handleChange}
                   />
                 </div>
-              </div>
+              )}
 
               <div className={styles.formGroup}>
                 <label className={styles.label} htmlFor="projectDetails">Project Details</label>
