@@ -12,6 +12,7 @@ export default function CollabPage() {
     brand: '',
     email: '',
     budget: '',
+    currency: 'USD',
     projectDetails: ''
   });
 
@@ -102,20 +103,27 @@ export default function CollabPage() {
 
               <div className={styles.formGroup}>
                 <label className={styles.label} htmlFor="budget">Estimated Budget</label>
-                <select 
-                  id="budget"
-                  name="budget" 
-                  className={styles.input} 
-                  required
-                  value={formData.budget}
-                  onChange={handleChange}
-                >
-                  <option value="" disabled>Select a budget range</option>
-                  <option value="Under $1k">Under $1,000</option>
-                  <option value="$1k - $5k">$1,000 - $5,000</option>
-                  <option value="$5k - $10k">$5,000 - $10,000</option>
-                  <option value="$10k+">$10,000+</option>
-                </select>
+                <div className={styles.budgetInputGroup}>
+                  <select 
+                    name="currency" 
+                    className={`${styles.input} ${styles.currencySelect}`}
+                    value={formData.currency}
+                    onChange={handleChange}
+                  >
+                    <option value="USD">USD</option>
+                    <option value="INR">INR</option>
+                  </select>
+                  <input 
+                    type="number"
+                    id="budget"
+                    name="budget" 
+                    className={styles.input} 
+                    placeholder="e.g. 5000"
+                    required
+                    value={formData.budget}
+                    onChange={handleChange}
+                  />
+                </div>
               </div>
 
               <div className={styles.formGroup}>

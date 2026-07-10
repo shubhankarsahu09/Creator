@@ -141,6 +141,17 @@
   box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.05);
 }
 
+.budgetInputGroup {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.currencySelect {
+  width: auto;
+  min-width: 80px;
+  cursor: pointer;
+}
+
 .textarea {
   min-height: 120px;
   resize: vertical;
