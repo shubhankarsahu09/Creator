@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 import styles from "./page.module.css";
 import Image from "next/image";
 import { portfolioData } from "../data";
@@ -167,7 +168,7 @@ export default function Home() {
           </div>
         </div>
         <div style={{ marginTop: '32px' }}>
-          <button className={styles.menuCtaBtn}>
+          <Link href="/collab" className={styles.menuCtaBtn}>
             <span className={styles.menuCtaBg}></span>
             <span className={styles.menuCtaText}>Partner with me</span>
             <span className={styles.menuCtaCircle}>
@@ -175,7 +176,7 @@ export default function Home() {
                 <path d="M5 13L13 5M13 5H6M13 5V12" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </span>
-          </button>
+          </Link>
         </div>
       </div>
 
@@ -214,7 +215,7 @@ export default function Home() {
                 </span>
               ))}
             </h1>
-            <button className={`${styles.ctaBtn} ${styles.ctaAnimate}`}>
+            <Link href="/collab" className={`${styles.ctaBtn} ${styles.ctaAnimate}`}>
               <span className={styles.ctaBtnBg}></span>
               <span className={styles.ctaBtnText}>Brand? Let's Collab!</span>
               <span className={styles.ctaBtnCircle}>
@@ -222,7 +223,7 @@ export default function Home() {
                   <path d="M5 13L13 5M13 5H6M13 5V12" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </span>
-            </button>
+            </Link>
           </div>
         </div>
       </main>
