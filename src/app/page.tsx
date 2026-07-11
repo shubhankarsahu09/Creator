@@ -233,13 +233,11 @@ export default function Home() {
                 className={`${styles.ctaBtn} ${styles.ctaAnimate}`}
                 style={{ animationDelay: '1.1s' }}
               >
-                <span className={styles.ctaBtnBg} style={{ background: '#E4E4E4' }}></span>
+                <span className={styles.ctaBtnBg}></span>
                 <span className={styles.ctaBtnText}>See my Beacon MediaKit</span>
-                <span className={styles.ctaBtnCircle} style={{ background: '#111' }}>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                    <polyline points="15 3 21 3 21 9"></polyline>
-                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                <span className={styles.ctaBtnCircle}>
+                  <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5 13L13 5M13 5H6M13 5V12" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </span>
               </a>
