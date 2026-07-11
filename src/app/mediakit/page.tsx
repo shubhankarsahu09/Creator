@@ -10,13 +10,15 @@ export default function MediaKitPage() {
         </svg>
         Back to Home
       </Link>
-      <iframe 
-        src="https://beacons.ai/setuprizx/mediakit" 
-        className={styles.iframe}
-        title="Beacon MediaKit"
-        frameBorder="0"
-        allowFullScreen
-      />
+      <div className={styles.iframeWrapper}>
+        <iframe 
+          src="https://beacons.ai/setuprizx/mediakit" 
+          className={styles.iframe}
+          title="Beacon MediaKit"
+          frameBorder="0"
+          allowFullScreen
+        />
+      </div>
     </div>
   );
 }
