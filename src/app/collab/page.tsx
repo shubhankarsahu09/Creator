@@ -2,7 +2,6 @@
 
 import { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
-import { useForm, ValidationError } from '@formspree/react';
 import styles from './page.module.css';
 
 const CustomDropdown = ({ options, value, onChange, className }: any) => {
@@ -52,7 +51,8 @@ const CustomDropdown = ({ options, value, onChange, className }: any) => {
 };
 
 export default function CollabPage() {
-  const [state, handleSubmit] = useForm('mbdvnpvv');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     brand: '',
@@ -67,6 +67,36 @@ export default function CollabPage() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: "32f9f8fe-868b-4ed7-8df2-4268b1e0dd1d",
+          ...formData,
+        }),
+      });
+      const data = await res.json();
+      if (data.success) {
+        setIsSuccess(true);
+      } else {
+        alert("Something went wrong. Please try again.");
+      }
+    } catch (error) {
+      console.error(error);
+      alert("Something went wrong. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <div className={styles.container}>
       <Link href="/" className={styles.backBtn}>
@@ -77,7 +107,7 @@ export default function CollabPage() {
       </Link>
 
       <div className={styles.formWrapper}>
-        {state.succeeded ? (
+        {isSuccess ? (
           <div className={styles.successMessage}>
             <div className={styles.successIcon}>
               <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -209,9 +239,9 @@ export default function CollabPage() {
                 />
               </div>
 
-              <button type="submit" className={styles.submitBtn} disabled={state.submitting}>
-                {state.submitting ? 'Sending...' : 'Send Request'}
-                {!state.submitting && (
+              <button type="submit" className={styles.submitBtn} disabled={isSubmitting}>
+                {isSubmitting ? 'Sending...' : 'Send Request'}
+                {!isSubmitting && (
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <line x1="22" y1="2" x2="11" y2="13"></line>
                     <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
