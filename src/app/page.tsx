@@ -226,10 +226,8 @@ export default function Home() {
                 </span>
               </Link>
               
-              <a 
-                href="https://beacons.ai/setuprizx/mediakit" 
-                target="_blank" 
-                rel="noopener noreferrer" 
+              <Link 
+                href="/mediakit" 
                 className={`${styles.ctaBtn} ${styles.ctaAnimate}`}
                 style={{ animationDelay: '1.1s' }}
               >
@@ -240,7 +238,7 @@ export default function Home() {
                     <path d="M5 13L13 5M13 5H6M13 5V12" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </span>
-              </a>
+              </Link>
             </div>
           </div>
         </div>
