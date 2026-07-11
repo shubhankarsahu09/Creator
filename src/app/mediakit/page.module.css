@@ -7,7 +7,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2rem;
+  padding: 50px;
 }
 
 .backBtn {
@@ -37,8 +37,7 @@
 
 .iframeWrapper {
   width: 100%;
-  max-width: 900px;
-  height: 90%;
+  height: 100%;
   background: #fff;
   border-radius: 15px;
   overflow: hidden;
