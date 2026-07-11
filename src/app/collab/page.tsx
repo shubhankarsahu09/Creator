@@ -107,150 +107,152 @@ export default function CollabPage() {
       </Link>
 
       <div className={styles.formWrapper}>
-        {isSuccess ? (
-          <div className={styles.successMessage}>
-            <div className={styles.successIcon}>
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M20 6L9 17l-5-5"/>
-              </svg>
+        <div className={styles.formInner}>
+          {isSuccess ? (
+            <div className={styles.successMessage}>
+              <div className={styles.successIcon}>
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M20 6L9 17l-5-5"/>
+                </svg>
+              </div>
+              <h2 className={styles.successTitle}>Request Sent!</h2>
+              <p className={styles.successDesc}>Thank you for reaching out. We will get back to you shortly.</p>
             </div>
-            <h2 className={styles.successTitle}>Request Sent!</h2>
-            <p className={styles.successDesc}>Thank you for reaching out. We will get back to you shortly.</p>
-          </div>
-        ) : (
-          <>
-            <div className={styles.header}>
-              <h1 className={styles.title}>Let's Collaborate</h1>
-              <p className={styles.subtitle}>Fill out the form below and let's create something amazing together.</p>
-            </div>
-
-            <form onSubmit={handleSubmit}>
-              <input type="hidden" name="collabType" value={formData.collabType} />
-              <input type="hidden" name="currency" value={formData.currency} />
-              
-              <div className={styles.formGroup}>
-                <label className={styles.label} htmlFor="name">Your Name</label>
-                <input 
-                  type="text" 
-                  id="name"
-                  name="name" 
-                  className={styles.input} 
-                  placeholder="John Doe"
-                  required 
-                  value={formData.name}
-                  onChange={handleChange}
-                />
+          ) : (
+            <>
+              <div className={styles.header}>
+                <h1 className={styles.title}>Let's Collaborate</h1>
+                <p className={styles.subtitle}>Fill out the form below and let's create something amazing together.</p>
               </div>
 
-              <div className={styles.formGroup}>
-                <label className={styles.label} htmlFor="brand">Brand / Company</label>
-                <input 
-                  type="text" 
-                  id="brand"
-                  name="brand" 
-                  className={styles.input} 
-                  placeholder="Acme Corp"
-                  required 
-                  value={formData.brand}
-                  onChange={handleChange}
-                />
-              </div>
-
-              <div className={styles.formGroup}>
-                <label className={styles.label} htmlFor="email">Email Address</label>
-                <input 
-                  type="email" 
-                  id="email"
-                  name="email" 
-                  className={styles.input} 
-                  placeholder="john@acme.com"
-                  required 
-                  value={formData.email}
-                  onChange={handleChange}
-                />
-              </div>
-
-              <div className={styles.formGroup}>
-                <label className={styles.label} htmlFor="collabType">Collaboration Type</label>
-                <CustomDropdown
-                  options={[
-                    { value: 'paid', label: 'Paid Collab' },
-                    { value: 'barter', label: 'Barter Collab' }
-                  ]}
-                  value={formData.collabType}
-                  onChange={(val: string) => setFormData({ ...formData, collabType: val })}
-                />
-              </div>
-
-              {formData.collabType === 'paid' && (
+              <form onSubmit={handleSubmit}>
+                <input type="hidden" name="collabType" value={formData.collabType} />
+                <input type="hidden" name="currency" value={formData.currency} />
+                
                 <div className={styles.formGroup}>
-                  <label className={styles.label} htmlFor="budget">Estimated Budget</label>
-                  <div className={styles.budgetInputGroup}>
-                    <CustomDropdown
-                      className={styles.currencySelectWrapper}
-                      options={[
-                        { value: 'USD', label: 'USD' },
-                        { value: 'INR', label: 'INR' }
-                      ]}
-                      value={formData.currency}
-                      onChange={(val: string) => setFormData({ ...formData, currency: val })}
-                    />
+                  <label className={styles.label} htmlFor="name">Your Name</label>
+                  <input 
+                    type="text" 
+                    id="name"
+                    name="name" 
+                    className={styles.input} 
+                    placeholder="John Doe"
+                    required 
+                    value={formData.name}
+                    onChange={handleChange}
+                  />
+                </div>
+
+                <div className={styles.formGroup}>
+                  <label className={styles.label} htmlFor="brand">Brand / Company</label>
+                  <input 
+                    type="text" 
+                    id="brand"
+                    name="brand" 
+                    className={styles.input} 
+                    placeholder="Acme Corp"
+                    required 
+                    value={formData.brand}
+                    onChange={handleChange}
+                  />
+                </div>
+
+                <div className={styles.formGroup}>
+                  <label className={styles.label} htmlFor="email">Email Address</label>
+                  <input 
+                    type="email" 
+                    id="email"
+                    name="email" 
+                    className={styles.input} 
+                    placeholder="john@acme.com"
+                    required 
+                    value={formData.email}
+                    onChange={handleChange}
+                  />
+                </div>
+
+                <div className={styles.formGroup}>
+                  <label className={styles.label} htmlFor="collabType">Collaboration Type</label>
+                  <CustomDropdown
+                    options={[
+                      { value: 'paid', label: 'Paid Collab' },
+                      { value: 'barter', label: 'Barter Collab' }
+                    ]}
+                    value={formData.collabType}
+                    onChange={(val: string) => setFormData({ ...formData, collabType: val })}
+                  />
+                </div>
+
+                {formData.collabType === 'paid' && (
+                  <div className={styles.formGroup}>
+                    <label className={styles.label} htmlFor="budget">Estimated Budget</label>
+                    <div className={styles.budgetInputGroup}>
+                      <CustomDropdown
+                        className={styles.currencySelectWrapper}
+                        options={[
+                          { value: 'USD', label: 'USD' },
+                          { value: 'INR', label: 'INR' }
+                        ]}
+                        value={formData.currency}
+                        onChange={(val: string) => setFormData({ ...formData, currency: val })}
+                      />
+                      <input 
+                        type="number"
+                        id="budget"
+                        name="budget" 
+                        className={styles.input} 
+                        placeholder="e.g. 5000"
+                        min="0"
+                        required
+                        value={formData.budget}
+                        onChange={handleChange}
+                      />
+                    </div>
+                  </div>
+                )}
+
+                {formData.collabType === 'barter' && (
+                  <div className={styles.formGroup}>
+                    <label className={styles.label} htmlFor="budget">Product / Service Offered</label>
                     <input 
-                      type="number"
+                      type="text"
                       id="budget"
                       name="budget" 
                       className={styles.input} 
-                      placeholder="e.g. 5000"
-                      min="0"
+                      placeholder="e.g. 1 Year Pro Subscription"
                       required
                       value={formData.budget}
                       onChange={handleChange}
                     />
                   </div>
-                </div>
-              )}
+                )}
 
-              {formData.collabType === 'barter' && (
                 <div className={styles.formGroup}>
-                  <label className={styles.label} htmlFor="budget">Product / Service Offered</label>
-                  <input 
-                    type="text"
-                    id="budget"
-                    name="budget" 
-                    className={styles.input} 
-                    placeholder="e.g. 1 Year Pro Subscription"
+                  <label className={styles.label} htmlFor="projectDetails">Project Details</label>
+                  <textarea 
+                    id="projectDetails"
+                    name="projectDetails" 
+                    className={styles.textarea} 
+                    placeholder="Tell me a bit about your brand and what you're looking to achieve..."
                     required
-                    value={formData.budget}
+                    value={formData.projectDetails}
                     onChange={handleChange}
                   />
                 </div>
-              )}
 
-              <div className={styles.formGroup}>
-                <label className={styles.label} htmlFor="projectDetails">Project Details</label>
-                <textarea 
-                  id="projectDetails"
-                  name="projectDetails" 
-                  className={styles.textarea} 
-                  placeholder="Tell me a bit about your brand and what you're looking to achieve..."
-                  required
-                  value={formData.projectDetails}
-                  onChange={handleChange}
-                />
-              </div>
-
-              <button type="submit" className={styles.submitBtn} disabled={isSubmitting}>
-                {isSubmitting ? 'Sending...' : 'Send Request'}
-                {!isSubmitting && (
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <line x1="22" y1="2" x2="11" y2="13"></line>
-                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
-                  </svg>
-                )}
-              </button>
-            </form>
-          </>
-        )}
+                <button type="submit" className={styles.submitBtn} disabled={isSubmitting}>
+                  {isSubmitting ? 'Sending...' : 'Send Request'}
+                  {!isSubmitting && (
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <line x1="22" y1="2" x2="11" y2="13"></line>
+                      <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                    </svg>
+                  )}
+                </button>
+              </form>
+            </>
+          )}
+        </div>
       </div>
     </div>
   );

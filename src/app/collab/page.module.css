@@ -1,11 +1,12 @@
 .container {
-  min-height: 100vh;
+  width: 100vw;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 4rem 2rem;
-  background: #fdfdfd;
+  padding: 50px;
+  background: #FDFBF7;
   color: #111;
   position: relative;
   overflow: hidden;
@@ -63,18 +64,23 @@
 
 .formWrapper {
   width: 100%;
-  max-width: 600px;
-  background: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  height: 100%;
+  background: #fff;
   border: 1px solid rgba(0, 0, 0, 0.05);
-  border-radius: 24px;
+  border-radius: 15px;
   padding: 3rem;
   z-index: 10;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.1);
   animation: slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   opacity: 0;
   transform: translateY(40px);
+  overflow-y: auto;
+}
+
+.formInner {
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
 }
 
 @keyframes slideUp {
