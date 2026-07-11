@@ -157,10 +157,6 @@ export default function Home() {
 
       {/* MENU PANEL */}
       <div className={`${styles.menuPanel} ${menuOpen ? styles.menuPanelOpen : ''}`}>
-        <nav>
-          <a href="#work" onClick={() => setMenuOpen(false)}>Work</a>
-          <a href="#about" onClick={() => setMenuOpen(false)}>About</a>
-        </nav>
         <div className={styles.menuContact}>
           <a href="mailto:shubhankarsahu82@gmail.com" className={styles.menuEmail}>shubhankarsahu82@gmail.com</a>
           <div className={styles.menuSocials}>
