@@ -211,7 +211,7 @@ export default function Home() {
                 </span>
               ))}
             </h1>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', alignItems: 'flex-start' }}>
               <Link href="/collab" className={`${styles.ctaBtn} ${styles.ctaAnimate}`}>
                 <span className={styles.ctaBtnBg}></span>
                 <span className={styles.ctaBtnText}>Brand? Let's Collab!</span>
