@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover premium, curated products.">
+    <title>Curated. | Premium Finds</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts for Apple-like aesthetic (Inter is very close to San Francisco) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">Curated.</a>
+            <ul class="nav-links">
+                <li><a href="#store">Store</a></li>
+                <li><a href="#picks">Top Picks</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <div class="hero-text">
+                <h1>The best of the best.</h1>
+                <p>Curated for those who demand excellence.</p>
+                <div class="hero-links">
+                    <a href="#picks" class="btn-primary">Shop now</a>
+                    <a href="#about" class="btn-secondary">Learn more ></a>
+                </div>
+                <div class="hero-links" style="margin-top: 20px;">
+                    <a href="#my-products" class="btn-primary" style="background: var(--text-primary); color: var(--bg-primary);">Products</a>
+                </div>
+            </div>
+            <div class="hero-image-container">
+                <img src="https://images.unsplash.com/photo-1491933382434-500287f9b54b?q=80&w=1200&auto=format&fit=crop" alt="Premium Devices" class="hero-img">
+            </div>
+        </section>
+
+        <section id="picks" class="products-section">
+            <div class="section-header">
+                <h2>Our Top Picks.</h2>
+                <p>Meticulously selected for your lifestyle.</p>
+            </div>
+            
+            <div class="product-grid" id="productGrid">
+                <!-- Products will be injected via JS -->
+            </div>
+        </section>
+
+        <section id="my-products" class="products-section" style="background-color: var(--bg-secondary);">
+            <div class="section-header">
+                <h2>Products I Use.</h2>
+                <p>My personal setup and daily drivers, with affiliate links.</p>
+            </div>
+            
+            <div class="product-grid" id="myProductGrid">
+                <!-- Products will be injected via JS -->
+            </div>
+        </section>
+        
+        <section id="about" class="about-section">
+            <div class="about-content">
+                <h2>Design matters.</h2>
+                <p>We believe in recommending products that not only work flawlessly, but look beautiful doing it.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+            <p class="copyright">Copyright © 2026 Curated. All rights reserved.</p>
+            <p class="disclaimer">As an Amazon Associate we earn from qualifying purchases.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
