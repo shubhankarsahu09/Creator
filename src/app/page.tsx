@@ -235,6 +235,20 @@ export default function Home() {
                   </svg>
                 </span>
               </Link>
+
+              <Link 
+                href="#" 
+                className={`${styles.ctaBtn} ${styles.ctaAnimate}`}
+                style={{ animationDelay: '1.2s' }}
+              >
+                <span className={styles.ctaBtnBg}></span>
+                <span className={styles.ctaBtnText}>My Setup / Gear</span>
+                <span className={styles.ctaBtnCircle}>
+                  <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5 13L13 5M13 5H6M13 5V12" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </span>
+              </Link>
             </div>
           </div>
         </div>
