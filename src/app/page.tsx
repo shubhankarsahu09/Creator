@@ -237,7 +237,7 @@ export default function Home() {
               </Link>
 
               <Link 
-                href="#" 
+                href="/gear" 
                 className={`${styles.ctaBtn} ${styles.ctaAnimate}`}
                 style={{ animationDelay: '1.2s' }}
               >
