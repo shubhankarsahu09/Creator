@@ -26,52 +26,58 @@ const gearProducts = [
 const pcSpecs = [
   { 
     label: "Processor", 
-    value: "Intel Core i9-13900K",
-    desc: "A 24-core, 32-thread beast handling everything from heavy video editing to streaming in 4k without breaking a sweat.",
+    value: "AMD Ryzen 9 9900X",
+    desc: "A powerful CPU handling everything from heavy video editing to streaming in 4k without breaking a sweat.",
     image: "https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?q=80&w=800&auto=format&fit=crop"
   },
   { 
     label: "GPU", 
-    value: "NVIDIA RTX 4090",
+    value: "RTX 5070ti",
     desc: "The ultimate graphics card for blazing fast renders and maxed-out gaming frames.",
     image: "https://images.unsplash.com/photo-1624701928517-44c8ac49d93c?q=80&w=800&auto=format&fit=crop"
   },
   { 
     label: "Motherboard", 
-    value: "ASUS ROG Maximus Z790",
+    value: "Gigabyte B650M Gaming WiFi",
     desc: "Premium motherboard with robust power delivery, ultra-fast I/O, and incredible overclocking capability.",
     image: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=800&auto=format&fit=crop"
   },
   { 
     label: "RAM", 
-    value: "64GB DDR5 6000MHz",
+    value: "32GB DDR5 6000 MHz",
     desc: "Lightning-fast DDR5 memory ensures no bottlenecking during heavy multi-tasking.",
     image: "https://images.unsplash.com/photo-1562976540-1502f7e023db?q=80&w=800&auto=format&fit=crop"
   },
   { 
     label: "Storage", 
-    value: "2TB NVMe M.2 SSD",
-    desc: "Blazing fast Gen4 speeds means games load instantly and footage scrubbing is perfectly smooth.",
+    value: "1 TB NVMe",
+    desc: "Blazing fast speeds means games load instantly and footage scrubbing is perfectly smooth.",
     image: "https://images.unsplash.com/photo-1597848212624-a19eb35e2651?q=80&w=800&auto=format&fit=crop"
   },
   { 
     label: "Power Supply", 
-    value: "1000W 80+ Gold",
+    value: "850 watt",
     desc: "Reliable and efficient power delivery keeping the entire system stable under heavy loads.",
     image: "https://images.unsplash.com/photo-1587202372775-e229f172b9d7?q=80&w=800&auto=format&fit=crop"
   },
   { 
     label: "Cooler", 
-    value: "360mm AIO Liquid Cooler",
-    desc: "Keeps the i9 processor chilling even during the most demanding tasks.",
+    value: "360mm liquid Cooler Trio",
+    desc: "Keeps the processor chilling even during the most demanding tasks.",
     image: "https://images.unsplash.com/photo-1605335198083-d51dce7d1dff?q=80&w=800&auto=format&fit=crop"
   },
   { 
     label: "Case", 
-    value: "NZXT H9 Flow",
-    desc: "Beautiful dual-chamber design with excellent airflow and cable management.",
+    value: "Deepcool CG530 4F",
+    desc: "Beautiful design with excellent airflow and cable management.",
     image: "https://images.unsplash.com/photo-1541560052-77eb10b42bf4?q=80&w=800&auto=format&fit=crop"
   },
+  {
+    label: "Monitor",
+    value: "MSI MAG 275QF 27 Inch 2k",
+    desc: "A stunning 27-inch 2K monitor for crystal-clear visuals and smooth gaming performance.",
+    image: "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?q=80&w=800&auto=format&fit=crop"
+  }
 ];
 
 export default function GearPage() {
