@@ -20,68 +20,61 @@ const gearProducts = [
     price: "Check on Amazon",
     image: "/msi-monitor.png",
     link: "https://www.amazon.in/MSI-MAG-275QF-Gaming-Monitor/dp/B0BSLJZJZH?crid=1CPE3W0BW6O7V&dib=eyJ2IjoiMSJ9.Kd97gQzqvwFlWdHG_g7HSF_rcvVhSjVWScvPwb8Pgd3jGu_29Gl_A0yobCsiYzsd39Rjb1VZGIbMBg6FkuqNZLNqR0_54ZGeZTy2kk2RgK7vBVcgpWZe2HC_4ST-4Q0DPKQlAJjXMzNVrQSmyaMyldrHGL2FEci6TCnE27jrutzEv-ujYKbbLnK2aywDRcprDckbjYEsyww9ab1YtIYOeWe-B4NZyxDNBdWns41AzpM.sZretseDRAkmbz0dH5kynhGN__9OknugGMv4xmUd-lw&dib_tag=se&keywords=msi+monitor&qid=1784960965&sprefix=msi+monit%2Caps%2C305&sr=8-12&linkCode=ll2&tag=shubhankar01a-21&linkId=a145538e133d30f8907450cb4186dd67&ref_=as_li_ss_tl"
-  },
-  {
-    id: 3,
-    title: "Ant Esports GM320 Gaming Mouse",
-    price: "Check on Amazon",
-    image: "https://m.media-amazon.com/images/I/31E2jXHjb-L.jpg",
-    link: "https://www.amazon.in/Ant-Esports-GM320-Programmable-Comfortable/dp/B08D64C9FN?crid=1GDR1Y3VG7277&dib=eyJ2IjoiMSJ9.GH6yks0-b9pXHTxW9IDRTVPccmyzt0xuWhBaugmzuAck4R38rXpUbb_slEvJ5ZRszvCZ5HstV7Otu0yr5qJ4oEf6uOvWIFJlcaXGoJAZ0mmlr74dUZtLa3S54OQy1RgmxWwaTf8IfAJaPCeRKWBr90ko-gjgj5MV3x6yLhwIHRk_AaYb8jyUMP_SWj9IlnkLtLXzO0tht7miqWvu0nTUwNW2YLV_4-pC-tnYl8xYplc.H1taylY8pEG3k7io7LmslM1ZWQceBN7L-DXh6JFNny4&dib_tag=se&keywords=ant%2Besports%2Bgm320%2Bv2&nsdOptOutParam=true&qid=1784977423&sprefix=Ant%2BEsports%2BGM320%2B%2B%2Caps%2C252&sr=8-3&th=1&linkCode=ll2&tag=shubhankar01a-21&linkId=0b22ecfa6cf79153d23f51b00e1dd12c&ref_=as_li_ss_tl"
   }
 ];
 
 const pcSpecs = [
-  { 
-    label: "Processor", 
+  {
+    label: "Processor",
     value: "AMD Ryzen 9 9900X",
     desc: "A powerful CPU handling everything from heavy video editing to streaming in 4k without breaking a sweat.",
     image: "https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?q=80&w=800&auto=format&fit=crop"
   },
-  { 
-    label: "GPU", 
+  {
+    label: "GPU",
     value: "GALAX RTX 5070 Ti",
     desc: "The ultimate graphics card for blazing fast renders and maxed-out gaming frames.",
     image: "https://images.unsplash.com/photo-1624701928517-44c8ac49d93c?q=80&w=800&auto=format&fit=crop"
   },
-  { 
-    label: "Motherboard", 
+  {
+    label: "Motherboard",
     value: "Gigabyte B650M Gaming WiFi",
     desc: "Premium motherboard with robust power delivery, ultra-fast I/O, and incredible overclocking capability.",
-    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=800&auto=format&fit=crop"
+    image: "/motherboard.png"
   },
-  { 
-    label: "RAM", 
+  {
+    label: "RAM",
     value: "32GB DDR5 5600 MHz",
     desc: "Lightning-fast DDR5 memory ensures no bottlenecking during heavy multi-tasking.",
     image: "https://images.unsplash.com/photo-1562976540-1502f7e023db?q=80&w=800&auto=format&fit=crop"
   },
-  { 
-    label: "Storage", 
+  {
+    label: "Storage",
     value: "1 TB NVMe",
     desc: "Blazing fast speeds means games load instantly and footage scrubbing is perfectly smooth.",
-    image: "https://images.unsplash.com/photo-1597848212624-a19eb35e2651?q=80&w=800&auto=format&fit=crop"
+    image: "/nvme.png"
   },
-  { 
-    label: "Power Supply", 
+  {
+    label: "Power Supply",
     value: "850 watt",
     desc: "Reliable and efficient power delivery keeping the entire system stable under heavy loads.",
-    image: "https://images.unsplash.com/photo-1587202372775-e229f172b9d7?q=80&w=800&auto=format&fit=crop"
+    image: "/psu.png"
   },
-  { 
-    label: "Cooler", 
+  {
+    label: "Cooler",
     value: "Thermaltake 360mm liquid Cooler",
     desc: "Keeps the processor chilling even during the most demanding tasks.",
-    image: "https://images.unsplash.com/photo-1605335198083-d51dce7d1dff?q=80&w=800&auto=format&fit=crop"
+    image: "/cooler.png"
   },
-  { 
-    label: "Case", 
+  {
+    label: "Case",
     value: "Deepcool CG530 4F",
     desc: "Beautiful design with excellent airflow and cable management.",
-    image: "https://images.unsplash.com/photo-1541560052-77eb10b42bf4?q=80&w=800&auto=format&fit=crop"
+    image: "/case.png"
   },
   {
     label: "Monitor",
-    value: "MSI MAG 275QF 27 Inch 2k",
+    value: "MSI MAG 275QF 27 inch 2k",
     desc: "A stunning 27-inch 2K monitor for crystal-clear visuals and smooth gaming performance.",
     image: "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?q=80&w=800&auto=format&fit=crop"
   }
@@ -112,7 +105,7 @@ export default function GearPage() {
     <div className={styles.container}>
       <Link href="/" className={styles.backBtn}>
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M19 12H5M5 12L12 19M5 12L12 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          <path d="M19 12H5M5 12L12 19M5 12L12 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
         Back to Home
       </Link>
@@ -128,8 +121,8 @@ export default function GearPage() {
         <h2 className={styles.specsSectionTitle}>My PC Specs</h2>
         <div className={styles.specsGrid}>
           {pcSpecs.map((spec, index) => (
-            <div 
-              key={index} 
+            <div
+              key={index}
               className={styles.specItem}
               onClick={() => setSelectedSpec(spec)}
             >
@@ -144,7 +137,7 @@ export default function GearPage() {
         <h2 className={styles.specsSectionTitle}>Direct Links</h2>
         <div className={styles.grid} ref={gridRef}>
           {gearProducts.map((product) => (
-            <a 
+            <a
               key={product.id}
               href={product.link}
               target="_blank"
@@ -153,9 +146,9 @@ export default function GearPage() {
             >
               <div className={styles.imageContainer}>
                 {/* Note: Using standard img here since domains might not be configured in next.config.js for next/image */}
-                <img 
-                  src={product.image} 
-                  alt={product.title} 
+                <img
+                  src={product.image}
+                  alt={product.title}
                   className={styles.image}
                 />
               </div>
