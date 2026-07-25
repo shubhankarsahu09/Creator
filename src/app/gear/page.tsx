@@ -25,7 +25,7 @@ const gearProducts = [
     id: 3,
     title: "Ant Esports GM320 Gaming Mouse",
     price: "Check on Amazon",
-    image: "/ant-esports-mouse.png",
+    image: "https://m.media-amazon.com/images/I/61-9pB5o1qL._SX679_.jpg",
     link: "https://www.amazon.in/Ant-Esports-GM320-Programmable-Comfortable/dp/B08D64C9FN?crid=1GDR1Y3VG7277&dib=eyJ2IjoiMSJ9.GH6yks0-b9pXHTxW9IDRTVPccmyzt0xuWhBaugmzuAck4R38rXpUbb_slEvJ5ZRszvCZ5HstV7Otu0yr5qJ4oEf6uOvWIFJlcaXGoJAZ0mmlr74dUZtLa3S54OQy1RgmxWwaTf8IfAJaPCeRKWBr90ko-gjgj5MV3x6yLhwIHRk_AaYb8jyUMP_SWj9IlnkLtLXzO0tht7miqWvu0nTUwNW2YLV_4-pC-tnYl8xYplc.H1taylY8pEG3k7io7LmslM1ZWQceBN7L-DXh6JFNny4&dib_tag=se&keywords=ant%2Besports%2Bgm320%2Bv2&nsdOptOutParam=true&qid=1784977423&sprefix=Ant%2BEsports%2BGM320%2B%2B%2Caps%2C252&sr=8-3&th=1&linkCode=ll2&tag=shubhankar01a-21&linkId=0b22ecfa6cf79153d23f51b00e1dd12c&ref_=as_li_ss_tl"
   }
 ];
