@@ -39,7 +39,7 @@ const pcSpecs = [
   },
   { 
     label: "GPU", 
-    value: "RTX 5070ti",
+    value: "GALAX RTX 5070 Ti",
     desc: "The ultimate graphics card for blazing fast renders and maxed-out gaming frames.",
     image: "https://images.unsplash.com/photo-1624701928517-44c8ac49d93c?q=80&w=800&auto=format&fit=crop"
   },
@@ -51,7 +51,7 @@ const pcSpecs = [
   },
   { 
     label: "RAM", 
-    value: "32GB DDR5 6000 MHz",
+    value: "32GB DDR5 5600 MHz",
     desc: "Lightning-fast DDR5 memory ensures no bottlenecking during heavy multi-tasking.",
     image: "https://images.unsplash.com/photo-1562976540-1502f7e023db?q=80&w=800&auto=format&fit=crop"
   },
@@ -69,7 +69,7 @@ const pcSpecs = [
   },
   { 
     label: "Cooler", 
-    value: "360mm liquid Cooler Trio",
+    value: "Thermaltake 360mm liquid Cooler",
     desc: "Keeps the processor chilling even during the most demanding tasks.",
     image: "https://images.unsplash.com/photo-1605335198083-d51dce7d1dff?q=80&w=800&auto=format&fit=crop"
   },
