@@ -126,8 +126,13 @@ export default function GearPage() {
               className={styles.specItem}
               onClick={() => setSelectedSpec(spec)}
             >
-              <div className={styles.specLabel}>{spec.label}</div>
-              <div className={styles.specValue}>{spec.value}</div>
+              <div className={styles.specImageWrapper}>
+                <img src={spec.image} alt={spec.label} className={styles.specThumbnail} />
+              </div>
+              <div className={styles.specText}>
+                <div className={styles.specLabel}>{spec.label}</div>
+                <div className={styles.specValue}>{spec.value}</div>
+              </div>
             </div>
           ))}
         </div>
