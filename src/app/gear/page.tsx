@@ -13,6 +13,13 @@ const gearProducts = [
     price: "Check on Amazon",
     image: "/kreo-hive-65.png",
     link: "https://www.amazon.in/Kreo-Anti-ghosting-Mechanical-Backlight-Detachable/dp/B0FNN853Z8?crid=3ONG4T9M4V4C2&dib=eyJ2IjoiMSJ9.6Mlx0UOpmM6STUnAu5Gkd1NwM2eQatSRNg1IM_hg_usAM0PWWx6uhTpVALxEoxK4JWW0XSROlPDuYL4A1yLl9zZFYEJTPW7iTRZzVlWPKahOpWXOtCmgcFnWM-SXXiFSnymSVw8dsxy-fRyCrhbyc-HnWYAX9YHwqOzJaaE1VY7zvbzYD0sdMaL4HQUj6e4xMvspTfzB5kkzA3ZYCT04mBpJfG6W9oXyKynyXGkZ4V4.b7_9H3qniI3Xw1xAVftRjHdae1Q4qBL0TumKXb93hlw&dib_tag=se&keywords=kreo%2Bhive%2B65&nsdOptOutParam=true&qid=1784904467&sprefix=Kreo%2B%2Caps%2C252&sr=8-3&th=1&linkCode=ll2&tag=shubhankar01a-21&linkId=30f8c58d8190624b30e81b48cd489d34&ref_=as_li_ss_tl"
+  },
+  {
+    id: 2,
+    title: "MSI MAG 275QF Gaming Monitor",
+    price: "Check on Amazon",
+    image: "/msi-monitor.png",
+    link: "https://www.amazon.in/MSI-MAG-275QF-Gaming-Monitor/dp/B0BSLJZJZH?crid=1CPE3W0BW6O7V&dib=eyJ2IjoiMSJ9.Kd97gQzqvwFlWdHG_g7HSF_rcvVhSjVWScvPwb8Pgd3jGu_29Gl_A0yobCsiYzsd39Rjb1VZGIbMBg6FkuqNZLNqR0_54ZGeZTy2kk2RgK7vBVcgpWZe2HC_4ST-4Q0DPKQlAJjXMzNVrQSmyaMyldrHGL2FEci6TCnE27jrutzEv-ujYKbbLnK2aywDRcprDckbjYEsyww9ab1YtIYOeWe-B4NZyxDNBdWns41AzpM.sZretseDRAkmbz0dH5kynhGN__9OknugGMv4xmUd-lw&dib_tag=se&keywords=msi+monitor&qid=1784960965&sprefix=msi+monit%2Caps%2C305&sr=8-12&linkCode=ll2&tag=shubhankar01a-21&linkId=a145538e133d30f8907450cb4186dd67&ref_=as_li_ss_tl"
   }
 ];
 
