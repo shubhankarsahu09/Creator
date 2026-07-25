@@ -23,6 +23,17 @@ const gearProducts = [
   }
 ];
 
+const pcSpecs = [
+  { label: "Processor", value: "Intel Core i9-13900K" },
+  { label: "GPU", value: "NVIDIA RTX 4090" },
+  { label: "Motherboard", value: "ASUS ROG Maximus Z790" },
+  { label: "RAM", value: "64GB DDR5 6000MHz" },
+  { label: "Storage", value: "2TB NVMe M.2 SSD" },
+  { label: "Power Supply", value: "1000W 80+ Gold" },
+  { label: "Cooler", value: "360mm AIO Liquid Cooler" },
+  { label: "Case", value: "NZXT H9 Flow" },
+];
+
 export default function GearPage() {
   const gridRef = useRef<HTMLDivElement>(null);
 
@@ -59,32 +70,47 @@ export default function GearPage() {
         </p>
       </div>
 
-      <div className={styles.grid} ref={gridRef}>
-        {gearProducts.map((product) => (
-          <a 
-            key={product.id}
-            href={product.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.card}
-          >
-            <div className={styles.imageContainer}>
-              {/* Note: Using standard img here since domains might not be configured in next.config.js for next/image */}
-              <img 
-                src={product.image} 
-                alt={product.title} 
-                className={styles.image}
-              />
+      <div className={styles.specsSection}>
+        <h2 className={styles.specsSectionTitle}>My PC Specs</h2>
+        <div className={styles.specsGrid}>
+          {pcSpecs.map((spec, index) => (
+            <div key={index} className={styles.specItem}>
+              <div className={styles.specLabel}>{spec.label}</div>
+              <div className={styles.specValue}>{spec.value}</div>
             </div>
-            <div className={styles.info}>
-              <h3 className={styles.productTitle}>{product.title}</h3>
-              <p className={styles.productPrice}>{product.price}</p>
-              <div className={styles.buyBtn}>
-                View on Amazon
+          ))}
+        </div>
+      </div>
+
+      <div className={styles.affiliateSection}>
+        <h2 className={styles.specsSectionTitle}>Affiliate Links</h2>
+        <div className={styles.grid} ref={gridRef}>
+          {gearProducts.map((product) => (
+            <a 
+              key={product.id}
+              href={product.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.card}
+            >
+              <div className={styles.imageContainer}>
+                {/* Note: Using standard img here since domains might not be configured in next.config.js for next/image */}
+                <img 
+                  src={product.image} 
+                  alt={product.title} 
+                  className={styles.image}
+                />
               </div>
-            </div>
-          </a>
-        ))}
+              <div className={styles.info}>
+                <h3 className={styles.productTitle}>{product.title}</h3>
+                <p className={styles.productPrice}>{product.price}</p>
+                <div className={styles.buyBtn}>
+                  View on Amazon
+                </div>
+              </div>
+            </a>
+          ))}
+        </div>
       </div>
     </div>
   );

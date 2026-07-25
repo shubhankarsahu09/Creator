@@ -148,6 +148,59 @@
   color: #fff;
 }
 
+.specsSection {
+  max-width: 1200px;
+  margin: 0 auto 80px;
+}
+
+.specsSectionTitle {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 32px;
+  background: linear-gradient(135deg, #fff 0%, #a1a1aa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.specsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.specItem {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 24px;
+  transition: all 0.3s ease;
+}
+
+.specItem:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.15);
+  transform: translateY(-4px);
+}
+
+.specLabel {
+  font-size: 0.9rem;
+  color: #a1a1aa;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 8px;
+}
+
+.specValue {
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: #fff;
+}
+
+.affiliateSection {
+  margin-top: 60px;
+}
+
 @media (max-width: 768px) {
   .title {
     font-size: 2.5rem;
@@ -158,3 +211,4 @@
     left: 20px;
   }
 }
+
