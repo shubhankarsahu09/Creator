@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import styles from './gear.module.css';
@@ -24,17 +24,58 @@ const gearProducts = [
 ];
 
 const pcSpecs = [
-  { label: "Processor", value: "Intel Core i9-13900K" },
-  { label: "GPU", value: "NVIDIA RTX 4090" },
-  { label: "Motherboard", value: "ASUS ROG Maximus Z790" },
-  { label: "RAM", value: "64GB DDR5 6000MHz" },
-  { label: "Storage", value: "2TB NVMe M.2 SSD" },
-  { label: "Power Supply", value: "1000W 80+ Gold" },
-  { label: "Cooler", value: "360mm AIO Liquid Cooler" },
-  { label: "Case", value: "NZXT H9 Flow" },
+  { 
+    label: "Processor", 
+    value: "Intel Core i9-13900K",
+    desc: "A 24-core, 32-thread beast handling everything from heavy video editing to streaming in 4k without breaking a sweat.",
+    image: "https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?q=80&w=800&auto=format&fit=crop"
+  },
+  { 
+    label: "GPU", 
+    value: "NVIDIA RTX 4090",
+    desc: "The ultimate graphics card for blazing fast renders and maxed-out gaming frames.",
+    image: "https://images.unsplash.com/photo-1624701928517-44c8ac49d93c?q=80&w=800&auto=format&fit=crop"
+  },
+  { 
+    label: "Motherboard", 
+    value: "ASUS ROG Maximus Z790",
+    desc: "Premium motherboard with robust power delivery, ultra-fast I/O, and incredible overclocking capability.",
+    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=800&auto=format&fit=crop"
+  },
+  { 
+    label: "RAM", 
+    value: "64GB DDR5 6000MHz",
+    desc: "Lightning-fast DDR5 memory ensures no bottlenecking during heavy multi-tasking.",
+    image: "https://images.unsplash.com/photo-1562976540-1502f7e023db?q=80&w=800&auto=format&fit=crop"
+  },
+  { 
+    label: "Storage", 
+    value: "2TB NVMe M.2 SSD",
+    desc: "Blazing fast Gen4 speeds means games load instantly and footage scrubbing is perfectly smooth.",
+    image: "https://images.unsplash.com/photo-1597848212624-a19eb35e2651?q=80&w=800&auto=format&fit=crop"
+  },
+  { 
+    label: "Power Supply", 
+    value: "1000W 80+ Gold",
+    desc: "Reliable and efficient power delivery keeping the entire system stable under heavy loads.",
+    image: "https://images.unsplash.com/photo-1587202372775-e229f172b9d7?q=80&w=800&auto=format&fit=crop"
+  },
+  { 
+    label: "Cooler", 
+    value: "360mm AIO Liquid Cooler",
+    desc: "Keeps the i9 processor chilling even during the most demanding tasks.",
+    image: "https://images.unsplash.com/photo-1605335198083-d51dce7d1dff?q=80&w=800&auto=format&fit=crop"
+  },
+  { 
+    label: "Case", 
+    value: "NZXT H9 Flow",
+    desc: "Beautiful dual-chamber design with excellent airflow and cable management.",
+    image: "https://images.unsplash.com/photo-1541560052-77eb10b42bf4?q=80&w=800&auto=format&fit=crop"
+  },
 ];
 
 export default function GearPage() {
+  const [selectedSpec, setSelectedSpec] = useState<any>(null);
   const gridRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -74,7 +115,11 @@ export default function GearPage() {
         <h2 className={styles.specsSectionTitle}>My PC Specs</h2>
         <div className={styles.specsGrid}>
           {pcSpecs.map((spec, index) => (
-            <div key={index} className={styles.specItem}>
+            <div 
+              key={index} 
+              className={styles.specItem}
+              onClick={() => setSelectedSpec(spec)}
+            >
               <div className={styles.specLabel}>{spec.label}</div>
               <div className={styles.specValue}>{spec.value}</div>
             </div>
@@ -83,7 +128,7 @@ export default function GearPage() {
       </div>
 
       <div className={styles.affiliateSection}>
-        <h2 className={styles.specsSectionTitle}>Affiliate Links</h2>
+        <h2 className={styles.specsSectionTitle}>Direct Links</h2>
         <div className={styles.grid} ref={gridRef}>
           {gearProducts.map((product) => (
             <a 
@@ -112,6 +157,25 @@ export default function GearPage() {
           ))}
         </div>
       </div>
+
+      {/* Modal Overlay */}
+      {selectedSpec && (
+        <div className={styles.modalOverlay} onClick={() => setSelectedSpec(null)}>
+          <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
+            <button className={styles.modalClose} onClick={() => setSelectedSpec(null)}>
+              &times;
+            </button>
+            <div className={styles.modalImageContainer}>
+              <img src={selectedSpec.image} alt={selectedSpec.value} className={styles.modalImage} />
+            </div>
+            <div className={styles.modalInfo}>
+              <h3 className={styles.modalTitle}>{selectedSpec.value}</h3>
+              <div className={styles.modalSubtitle}>{selectedSpec.label}</div>
+              <p className={styles.modalDesc}>{selectedSpec.desc}</p>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
