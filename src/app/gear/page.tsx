@@ -28,13 +28,13 @@ const pcSpecs = [
     label: "Processor",
     value: "AMD Ryzen 9 9900X",
     desc: "A powerful CPU handling everything from heavy video editing to streaming in 4k without breaking a sweat.",
-    image: "https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?q=80&w=800&auto=format&fit=crop"
+    image: "/processor.png"
   },
   {
     label: "GPU",
     value: "GALAX RTX 5070 Ti",
     desc: "The ultimate graphics card for blazing fast renders and maxed-out gaming frames.",
-    image: "https://images.unsplash.com/photo-1624701928517-44c8ac49d93c?q=80&w=800&auto=format&fit=crop"
+    image: "/gpu.png"
   },
   {
     label: "Motherboard",
@@ -46,19 +46,19 @@ const pcSpecs = [
     label: "RAM",
     value: "32GB DDR5 5600 MHz",
     desc: "Lightning-fast DDR5 memory ensures no bottlenecking during heavy multi-tasking.",
-    image: "https://images.unsplash.com/photo-1562976540-1502f7e023db?q=80&w=800&auto=format&fit=crop"
+    image: "/ram.png"
   },
   {
     label: "Storage",
     value: "1 TB NVMe",
     desc: "Blazing fast speeds means games load instantly and footage scrubbing is perfectly smooth.",
-    image: "/nvme.png"
+    image: "/ssd.png"
   },
   {
     label: "Power Supply",
     value: "850 watt",
     desc: "Reliable and efficient power delivery keeping the entire system stable under heavy loads.",
-    image: "/psu.png"
+    image: "/power.png"
   },
   {
     label: "Cooler",
@@ -70,13 +70,13 @@ const pcSpecs = [
     label: "Case",
     value: "Deepcool CG530 4F",
     desc: "Beautiful design with excellent airflow and cable management.",
-    image: "/case.png"
+    image: "/cabinet.png"
   },
   {
     label: "Monitor",
     value: "MSI MAG 275QF 27 inch 2k",
     desc: "A stunning 27-inch 2K monitor for crystal-clear visuals and smooth gaming performance.",
-    image: "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?q=80&w=800&auto=format&fit=crop"
+    image: "/monitor.png"
   }
 ];
 
