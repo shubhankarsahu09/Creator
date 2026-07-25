@@ -20,6 +20,13 @@ const gearProducts = [
     price: "Check on Amazon",
     image: "/msi-monitor.png",
     link: "https://www.amazon.in/MSI-MAG-275QF-Gaming-Monitor/dp/B0BSLJZJZH?crid=1CPE3W0BW6O7V&dib=eyJ2IjoiMSJ9.Kd97gQzqvwFlWdHG_g7HSF_rcvVhSjVWScvPwb8Pgd3jGu_29Gl_A0yobCsiYzsd39Rjb1VZGIbMBg6FkuqNZLNqR0_54ZGeZTy2kk2RgK7vBVcgpWZe2HC_4ST-4Q0DPKQlAJjXMzNVrQSmyaMyldrHGL2FEci6TCnE27jrutzEv-ujYKbbLnK2aywDRcprDckbjYEsyww9ab1YtIYOeWe-B4NZyxDNBdWns41AzpM.sZretseDRAkmbz0dH5kynhGN__9OknugGMv4xmUd-lw&dib_tag=se&keywords=msi+monitor&qid=1784960965&sprefix=msi+monit%2Caps%2C305&sr=8-12&linkCode=ll2&tag=shubhankar01a-21&linkId=a145538e133d30f8907450cb4186dd67&ref_=as_li_ss_tl"
+  },
+  {
+    id: 3,
+    title: "Ant Esports GM320 Gaming Mouse",
+    price: "Check on Amazon",
+    image: "/ant-esports-mouse.png",
+    link: "https://www.amazon.in/Ant-Esports-GM320-Programmable-Comfortable/dp/B08D64C9FN?crid=1GDR1Y3VG7277&dib=eyJ2IjoiMSJ9.GH6yks0-b9pXHTxW9IDRTVPccmyzt0xuWhBaugmzuAck4R38rXpUbb_slEvJ5ZRszvCZ5HstV7Otu0yr5qJ4oEf6uOvWIFJlcaXGoJAZ0mmlr74dUZtLa3S54OQy1RgmxWwaTf8IfAJaPCeRKWBr90ko-gjgj5MV3x6yLhwIHRk_AaYb8jyUMP_SWj9IlnkLtLXzO0tht7miqWvu0nTUwNW2YLV_4-pC-tnYl8xYplc.H1taylY8pEG3k7io7LmslM1ZWQceBN7L-DXh6JFNny4&dib_tag=se&keywords=ant%2Besports%2Bgm320%2Bv2&nsdOptOutParam=true&qid=1784977423&sprefix=Ant%2BEsports%2BGM320%2B%2B%2Caps%2C252&sr=8-3&th=1&linkCode=ll2&tag=shubhankar01a-21&linkId=0b22ecfa6cf79153d23f51b00e1dd12c&ref_=as_li_ss_tl"
   }
 ];
 
