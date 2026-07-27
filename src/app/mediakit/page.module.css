@@ -51,3 +51,21 @@
   border: none;
   display: block;
 }
+
+@media (max-width: 768px) {
+  .container {
+    padding: 16px;
+    padding-top: 80px; /* Space for the back button */
+  }
+
+  .backBtn {
+    top: 16px;
+    left: 16px;
+    padding: 0.4rem 0.8rem;
+    font-size: 0.85rem;
+  }
+  
+  .iframeWrapper {
+    border-radius: 12px;
+  }
+}
