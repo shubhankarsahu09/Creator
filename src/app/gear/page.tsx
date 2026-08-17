@@ -20,6 +20,13 @@ const gearProducts = [
     price: "Check on Amazon",
     image: "/msi-monitor.png",
     link: "https://www.amazon.in/MSI-MAG-275QF-Gaming-Monitor/dp/B0BSLJZJZH?crid=1CPE3W0BW6O7V&dib=eyJ2IjoiMSJ9.Kd97gQzqvwFlWdHG_g7HSF_rcvVhSjVWScvPwb8Pgd3jGu_29Gl_A0yobCsiYzsd39Rjb1VZGIbMBg6FkuqNZLNqR0_54ZGeZTy2kk2RgK7vBVcgpWZe2HC_4ST-4Q0DPKQlAJjXMzNVrQSmyaMyldrHGL2FEci6TCnE27jrutzEv-ujYKbbLnK2aywDRcprDckbjYEsyww9ab1YtIYOeWe-B4NZyxDNBdWns41AzpM.sZretseDRAkmbz0dH5kynhGN__9OknugGMv4xmUd-lw&dib_tag=se&keywords=msi+monitor&qid=1784960965&sprefix=msi+monit%2Caps%2C305&sr=8-12&linkCode=ll2&tag=shubhankar01a-21&linkId=a145538e133d30f8907450cb4186dd67&ref_=as_li_ss_tl"
+  },
+  {
+    id: 3,
+    title: "Table Wrap",
+    price: "Check on Amazon",
+    image: "/tablewrap.png",
+    link: "https://www.amazon.in/Stickers-Wallpaper-Kitchen-Concrete-Adhesive/dp/B08Z3STXD6?pd_rd_w=ewDAM&content-id=amzn1.sym.8ae3840a-4067-447e-bc32-b5f89fe9b78b&pf_rd_p=8ae3840a-4067-447e-bc32-b5f89fe9b78b&pf_rd_r=7H2CF6KCT4B0F4P88GDG&pd_rd_wg=7vV9w&pd_rd_r=13cdcbb8-1528-4bd0-aa8c-8ef56c68e1bc&pd_rd_i=B08Z3STXD6&psc=1&linkCode=ll2&tag=shubhankars0a-21&linkId=cd4fb529623a63155b9de0e5624b8921&ref_=as_li_ss_tl"
   }
 ];
 
