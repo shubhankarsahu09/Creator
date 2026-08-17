@@ -13,10 +13,7 @@ export default function CreatorWebsitePage() {
     budget: 1000,
     currency: 'USD',
     description: '',
-    pagesBrand: false,
-    pagesMediacade: false,
-    pagesThis: false,
-    pagesThat: false,
+    requestedPages: '',
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -28,14 +25,6 @@ export default function CreatorWebsitePage() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Convert boolean pages to string for form submission
-    const selectedPages = [
-      formData.pagesBrand ? "Brand" : null,
-      formData.pagesMediacade ? "My Mediacade" : null,
-      formData.pagesThis ? "My This" : null,
-      formData.pagesThat ? "My That" : null
-    ].filter(Boolean).join(", ");
 
     try {
       const res = await fetch("https://api.web3forms.com/submit", {
@@ -49,7 +38,7 @@ export default function CreatorWebsitePage() {
           name: formData.name,
           email: formData.email,
           budget: `${formData.currency} ${formData.budget}`,
-          requested_pages: selectedPages || "None specifically selected",
+          requested_pages: formData.requestedPages,
           description: formData.description,
           subject: "New Creator Website Request!"
         }),
@@ -125,25 +114,17 @@ export default function CreatorWebsitePage() {
               </div>
 
               <div className={styles.formGroup}>
-                <label className={styles.label}>Which pages do you need?</label>
-                <div className={styles.checkboxGroup}>
-                  <label className={styles.checkboxLabel}>
-                    <input type="checkbox" name="pagesBrand" checked={formData.pagesBrand} onChange={handleChange} />
-                    1. Brand
-                  </label>
-                  <label className={styles.checkboxLabel}>
-                    <input type="checkbox" name="pagesMediacade" checked={formData.pagesMediacade} onChange={handleChange} />
-                    2. My Mediacade
-                  </label>
-                  <label className={styles.checkboxLabel}>
-                    <input type="checkbox" name="pagesThis" checked={formData.pagesThis} onChange={handleChange} />
-                    3. My This
-                  </label>
-                  <label className={styles.checkboxLabel}>
-                    <input type="checkbox" name="pagesThat" checked={formData.pagesThat} onChange={handleChange} />
-                    4. My That
-                  </label>
-                </div>
+                <label className={styles.label} htmlFor="requestedPages">Which pages do you need?</label>
+                <input 
+                  type="text" 
+                  id="requestedPages"
+                  name="requestedPages" 
+                  className={styles.input} 
+                  placeholder="e.g. Home, Brand, Media Kit, Links..."
+                  required 
+                  value={formData.requestedPages}
+                  onChange={handleChange}
+                />
               </div>
 
               <div className={styles.formGroup}>
