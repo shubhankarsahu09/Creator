@@ -22,6 +22,7 @@ interface IgData {
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [showContactModal, setShowContactModal] = useState(false);
   const [igData, setIgData] = useState<IgData | null>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const imgLayerRef = useRef<HTMLDivElement>(null);
@@ -249,11 +250,45 @@ export default function Home() {
                   </svg>
                 </span>
               </Link>
+              
+              <button 
+                onClick={() => setShowContactModal(true)}
+                className={`${styles.ctaBtn} ${styles.ctaAnimate}`}
+                style={{ animationDelay: '1.3s' }}
+              >
+                <span className={styles.ctaBtnBg}></span>
+                <span className={styles.ctaBtnText}>I need a website for a creator??</span>
+                <span className={styles.ctaBtnCircle}>
+                  <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5 13L13 5M13 5H6M13 5V12" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </span>
+              </button>
             </div>
           </div>
         </div>
       </main>
 
+      {/* CONTACT MODAL */}
+      {showContactModal && (
+        <div className={styles.modalOverlay} onClick={() => setShowContactModal(false)}>
+          <div className={styles.modalContent} onClick={e => e.stopPropagation()}>
+            <button className={styles.modalClose} onClick={() => setShowContactModal(false)}>&times;</button>
+            <h2 className={styles.modalTitle}>Get Your Creator Website</h2>
+            <p className={styles.modalDesc}>Fill in your details and I'll get in touch to help you build an amazing website just like this one.</p>
+            <form className={styles.contactForm} onSubmit={(e) => {
+              e.preventDefault();
+              alert("Thanks! I will get in touch with you soon.");
+              setShowContactModal(false);
+            }}>
+              <input type="text" placeholder="Your Name" required className={styles.formInput} />
+              <input type="email" placeholder="Your Email" required className={styles.formInput} />
+              <textarea placeholder="Tell me about your channel/brand..." rows={4} required className={styles.formInput}></textarea>
+              <button type="submit" className={styles.formSubmitBtn}>Send Request</button>
+            </form>
+          </div>
+        </div>
+      )}
     </>
   );
 }
