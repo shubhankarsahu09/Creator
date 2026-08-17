@@ -569,31 +569,3 @@
   margin-top: 4px;
   font-weight: 600;
 }
-
-/* ===== MODAL ===== */
-.modalOverlay {
-  position: fixed; inset: 0; background: rgba(0,0,0,0.6); backdrop-filter: blur(4px);
-  z-index: 1000; display: flex; align-items: center; justify-content: center;
-}
-.modalContent {
-  background: #FFF; width: 90%; max-width: 500px; border-radius: 20px; padding: 40px;
-  position: relative; box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-}
-.modalClose {
-  position: absolute; top: 20px; right: 20px; background: none; border: none; font-size: 28px;
-  cursor: pointer; color: #111;
-}
-.modalTitle { font-size: 24px; font-weight: 600; color: #111; margin-bottom: 12px; }
-.modalDesc { font-size: 15px; color: #707070; margin-bottom: 24px; line-height: 1.5; }
-.contactForm { display: flex; flex-direction: column; gap: 16px; }
-.formInput {
-  width: 100%; padding: 14px 16px; border-radius: 8px; border: 1px solid #E4E4E4;
-  font-size: 15px; color: #111; font-family: inherit; transition: border-color 0.3s;
-}
-.formInput:focus { outline: none; border-color: #75C5DE; }
-.formSubmitBtn {
-  background: #111; color: #FFF; border: none; padding: 16px; border-radius: 8px;
-  font-size: 16px; font-weight: 600; cursor: pointer; transition: background 0.3s;
-  margin-top: 8px;
-}
-.formSubmitBtn:hover { background: #333; }

@@ -22,8 +22,6 @@ interface IgData {
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [showContactModal, setShowContactModal] = useState(false);
-  const [isSubmitting, setIsSubmitting] = useState(false);
   const [igData, setIgData] = useState<IgData | null>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const imgLayerRef = useRef<HTMLDivElement>(null);
@@ -252,8 +250,8 @@ export default function Home() {
                 </span>
               </Link>
               
-              <button 
-                onClick={() => setShowContactModal(true)}
+              <Link 
+                href="/creator-website"
                 className={`${styles.ctaBtn} ${styles.ctaAnimate}`}
                 style={{ animationDelay: '1.3s' }}
               >
@@ -264,58 +262,12 @@ export default function Home() {
                     <path d="M5 13L13 5M13 5H6M13 5V12" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </span>
-              </button>
+              </Link>
             </div>
           </div>
         </div>
       </main>
 
-      {/* CONTACT MODAL */}
-      {showContactModal && (
-        <div className={styles.modalOverlay} onClick={() => setShowContactModal(false)}>
-          <div className={styles.modalContent} onClick={e => e.stopPropagation()}>
-            <button className={styles.modalClose} onClick={() => setShowContactModal(false)}>&times;</button>
-            <h2 className={styles.modalTitle}>Get Your Creator Website</h2>
-            <p className={styles.modalDesc}>Fill in your details and I'll get in touch to help you build an amazing website just like this one.</p>
-            <form className={styles.contactForm} onSubmit={async (e) => {
-              e.preventDefault();
-              setIsSubmitting(true);
-
-              const form = e.target as HTMLFormElement;
-              const formData = new FormData(form);
-              formData.append("access_key", "20523f8b-5c89-46c6-928b-164e78338cdf");
-
-              try {
-                  const response = await fetch("https://api.web3forms.com/submit", {
-                      method: "POST",
-                      body: formData
-                  });
-
-                  const data = await response.json();
-
-                  if (response.ok) {
-                      alert("Success! Your message has been sent.");
-                      form.reset();
-                      setShowContactModal(false);
-                  } else {
-                      alert("Error: " + data.message);
-                  }
-              } catch (error) {
-                  alert("Something went wrong. Please try again.");
-              } finally {
-                  setIsSubmitting(false);
-              }
-            }}>
-              <input type="text" name="name" placeholder="Your Name" required className={styles.formInput} />
-              <input type="email" name="email" placeholder="Your Email" required className={styles.formInput} />
-              <textarea name="message" placeholder="Tell me about your channel/brand..." rows={4} required className={styles.formInput}></textarea>
-              <button type="submit" disabled={isSubmitting} className={styles.formSubmitBtn}>
-                {isSubmitting ? "Sending..." : "Send Request"}
-              </button>
-            </form>
-          </div>
-        </div>
-      )}
     </>
   );
 }
