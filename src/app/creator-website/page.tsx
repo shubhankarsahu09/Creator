@@ -10,11 +10,26 @@ export default function CreatorWebsitePage() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    budget: 1000,
-    currency: 'USD',
+    currency: 'INR',
+    plan: 'Plan 1',
     description: '',
     requestedPages: '',
   });
+
+  const getPlans = () => {
+    if (formData.currency === 'INR') {
+      return [
+        { id: 'Plan 1', price: '₹99', title: 'Basic', desc: '2 pages: 1st contact form (customizable), 2nd media kit.' },
+        { id: 'Plan 2', price: '₹299', title: 'Standard', desc: '4 pages: 1st contact form (customizable), 2nd Beacon Media Kit, 3rd & 4th anything you want (customizable).' },
+        { id: 'Plan 3', price: '₹599', title: 'Premium', desc: 'Any number of pages: contact page, media kit, and all customizable pages you want.' },
+      ];
+    }
+    return [
+      { id: 'Plan 1', price: '$1.99', title: 'Basic', desc: '2 pages: 1st contact form (customizable), 2nd media kit.' },
+      { id: 'Plan 2', price: '$3.99', title: 'Standard', desc: '4 pages: 1st contact form (customizable), 2nd Beacon Media Kit, 3rd & 4th anything you want (customizable).' },
+      { id: 'Plan 3', price: '$7.99', title: 'Premium', desc: 'Any number of pages: contact page, media kit, and all customizable pages you want.' },
+    ];
+  };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const target = e.target as HTMLInputElement;
@@ -37,7 +52,7 @@ export default function CreatorWebsitePage() {
           access_key: "20523f8b-5c89-46c6-928b-164e78338cdf",
           name: formData.name,
           email: formData.email,
-          budget: `${formData.currency} ${formData.budget}`,
+          selected_plan: `${formData.currency} - ${formData.plan}`,
           requested_pages: formData.requestedPages,
           description: formData.description,
           subject: "New Creator Website Request!"
@@ -141,33 +156,39 @@ export default function CreatorWebsitePage() {
               </div>
 
               <div className={styles.formGroup}>
-                <label className={styles.label} htmlFor="budget">Estimated Budget</label>
-                <div className={styles.rangeGroup}>
-                  <select 
-                    name="currency" 
-                    className={styles.select} 
-                    style={{ width: '100px', flexShrink: 0 }}
-                    value={formData.currency}
-                    onChange={handleChange}
-                  >
-                    <option value="USD">USD</option>
-                    <option value="INR">INR</option>
-                  </select>
-                  
-                  <input 
-                    type="range"
-                    id="budget"
-                    name="budget"
-                    min="0"
-                    max={formData.currency === 'USD' ? 10000 : 1000000}
-                    step={formData.currency === 'USD' ? 100 : 10000}
-                    className={styles.rangeSlider}
-                    value={formData.budget}
-                    onChange={handleChange}
-                  />
-                  <span className={styles.rangeValue}>
-                    {formData.currency === 'USD' ? '$' : '₹'}{formData.budget.toLocaleString()}
-                  </span>
+                <label className={styles.label} htmlFor="currency">Currency</label>
+                <select 
+                  name="currency" 
+                  id="currency"
+                  className={styles.select} 
+                  value={formData.currency}
+                  onChange={handleChange}
+                >
+                  <option value="INR">INR</option>
+                  <option value="USD">USD</option>
+                </select>
+              </div>
+
+              <div className={styles.formGroup}>
+                <label className={styles.label}>Select a Plan</label>
+                <div className={styles.planContainer}>
+                  {getPlans().map(plan => (
+                    <label key={plan.id} className={`${styles.planCard} ${formData.plan === plan.id ? styles.planCardActive : ''}`}>
+                      <input 
+                        type="radio" 
+                        name="plan" 
+                        value={plan.id} 
+                        checked={formData.plan === plan.id} 
+                        onChange={handleChange} 
+                        className={styles.planRadio}
+                      />
+                      <div className={styles.planHeader}>
+                        <span className={styles.planTitle}>{plan.title}</span>
+                        <span className={styles.planPrice}>{plan.price}</span>
+                      </div>
+                      <p className={styles.planDesc}>{plan.desc}</p>
+                    </label>
+                  ))}
                 </div>
               </div>
 

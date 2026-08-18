@@ -169,22 +169,66 @@
   cursor: pointer;
 }
 
-.rangeGroup {
+.planContainer {
   display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.planCard {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  background: #fff;
+}
+
+.planCard:hover {
+  border-color: #75C5DE;
+  box-shadow: 0 4px 12px rgba(117, 197, 222, 0.1);
+}
+
+.planCardActive {
+  border-color: #75C5DE;
+  background: rgba(117, 197, 222, 0.05);
+  box-shadow: 0 0 0 1px #75C5DE;
+}
+
+.planRadio {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.planHeader {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  gap: 15px;
+  margin-bottom: 0.5rem;
 }
 
-.rangeSlider {
-  flex: 1;
-  accent-color: #75C5DE;
-}
-
-.rangeValue {
-  font-weight: 600;
+.planTitle {
+  font-weight: 700;
+  font-size: 1.1rem;
   color: #111;
-  min-width: 80px;
-  text-align: right;
+}
+
+.planPrice {
+  font-weight: 800;
+  font-size: 1.2rem;
+  color: #75C5DE;
+}
+
+.planDesc {
+  font-size: 0.9rem;
+  color: rgba(0, 0, 0, 0.6);
+  line-height: 1.5;
+  margin: 0;
 }
 
 .submitBtn {
