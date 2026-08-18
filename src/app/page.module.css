@@ -172,6 +172,71 @@
 }
 .menuSocials a:hover { color: #F4F1E8; }
 
+.contactTitle {
+  color: #F4F1E8;
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+.contactForm {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.contactInput, .contactTextarea {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 12px 16px;
+  color: #F4F1E8;
+  font-size: 14px;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+.contactInput::placeholder, .contactTextarea::placeholder {
+  color: rgba(244, 241, 232, 0.4);
+}
+.contactInput:focus, .contactTextarea:focus {
+  border-color: #75C5DE;
+}
+.contactTextarea {
+  min-height: 100px;
+  resize: vertical;
+}
+.contactSubmit {
+  background: #75C5DE;
+  color: #111;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  margin-top: 8px;
+}
+.contactSubmit:hover {
+  opacity: 0.9;
+}
+.contactSubmit:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.contactDisclaimer {
+  color: #9A9590;
+  font-size: 12px;
+  margin-top: 16px;
+  font-style: italic;
+}
+.successMessage {
+  color: #75C5DE;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 20px 0;
+}
+
 /* ===== HERO ===== */
 .hero {
   position: relative; width: 100%; overflow: hidden;

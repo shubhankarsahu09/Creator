@@ -23,8 +23,50 @@ interface IgData {
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [igData, setIgData] = useState<IgData | null>(null);
+  const [formData, setFormData] = useState({ name: '', email: '', issue: '' });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const imgLayerRef = useRef<HTMLDivElement>(null);
+
+  const handleContactChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleContactSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: "bfca9649-6dac-443c-aa4a-302f79e20160",
+          name: formData.name,
+          email: formData.email,
+          message: formData.issue,
+          subject: "New Contact Request from Home Page"
+        }),
+      });
+      const data = await res.json();
+      if (data.success) {
+        setIsSuccess(true);
+        setFormData({ name: '', email: '', issue: '' });
+        setTimeout(() => setIsSuccess(false), 5000);
+      } else {
+        alert("Something went wrong.");
+      }
+    } catch (error) {
+      console.error(error);
+      alert("Something went wrong.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   useEffect(() => {
     // Spotlight reveal
@@ -164,15 +206,20 @@ export default function Home() {
           </div>
         </div>
         <div style={{ marginTop: '32px' }}>
-          <Link href="/collab" className={styles.menuCtaBtn}>
-            <span className={styles.menuCtaBg}></span>
-            <span className={styles.menuCtaText}>Partner with me</span>
-            <span className={styles.menuCtaCircle}>
-              <svg width="14" height="14" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M5 13L13 5M13 5H6M13 5V12" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </span>
-          </Link>
+          <h3 className={styles.contactTitle}>Contact me</h3>
+          {isSuccess ? (
+            <div className={styles.successMessage}>Message sent successfully!</div>
+          ) : (
+            <form onSubmit={handleContactSubmit} className={styles.contactForm}>
+              <input type="text" name="name" placeholder="Your Name" value={formData.name} onChange={handleContactChange} required className={styles.contactInput} />
+              <input type="email" name="email" placeholder="Your Email" value={formData.email} onChange={handleContactChange} required className={styles.contactInput} />
+              <textarea name="issue" placeholder="Your Issue / Inquiry related to my work" value={formData.issue} onChange={handleContactChange} required className={styles.contactTextarea} />
+              <button type="submit" className={styles.contactSubmit} disabled={isSubmitting}>
+                {isSubmitting ? 'Sending...' : 'Send Message'}
+              </button>
+            </form>
+          )}
+          <p className={styles.contactDisclaimer}>I will try to message you back in 24-48 hours.</p>
         </div>
       </div>
 
