@@ -27,6 +27,13 @@ const gearProducts = [
     price: "Check on Amazon",
     image: "/tablewrap.png",
     link: "https://www.amazon.in/Stickers-Wallpaper-Kitchen-Concrete-Adhesive/dp/B08Z3STXD6?pd_rd_w=ewDAM&content-id=amzn1.sym.8ae3840a-4067-447e-bc32-b5f89fe9b78b&pf_rd_p=8ae3840a-4067-447e-bc32-b5f89fe9b78b&pf_rd_r=7H2CF6KCT4B0F4P88GDG&pd_rd_wg=7vV9w&pd_rd_r=13cdcbb8-1528-4bd0-aa8c-8ef56c68e1bc&pd_rd_i=B08Z3STXD6&psc=1&linkCode=ll2&tag=shubhankars0a-21&linkId=cd4fb529623a63155b9de0e5624b8921&ref_=as_li_ss_tl"
+  },
+  {
+    id: 4,
+    title: "ATK R1 Wireless Mouse",
+    price: "Check on Amazon",
+    image: "/mouse.png",
+    link: "https://www.amazon.in/ATK-R1-Wireless-Ergonomic-Adjustable/dp/B0FN7JQKFR?crid=ILYZS5R1ZSSU&dib=eyJ2IjoiMSJ9.S3PoSwbVIGGY-cBFpl5jh9yx7bCuTKpJ7h93GxVpyPPNLBvI2n7dZI6ugIhCsEco28nkJS52SRBlw-kv1uksFQKAJpsO5LTylyfwXo9LrId2iib1PZaso9njAq7UI1WqMgocc_8nFhBari-RWhltgWB8a-BAhffb5AWxe30b8VwOJHWjY7PTmz13GmyjeKdsIXjTqoXD9TWVcqQvtP6agFqy_IJixAACu4UUyMd6UGY.pNT-jKZ98pn9eoFjsg9-3hw-4ZNGx6OGAOK9R4XO2Ig&dib_tag=se&keywords=vxe%2Br1&qid=1787236417&sprefix=vxe%2Br%2Caps%2C272&sr=8-4&th=1&linkCode=ll2&tag=shubhankars0a-21&linkId=7cdc98fcd22eed0d810bfc20e04fb9fe&ref_=as_li_ss_tl"
   }
 ];
 
