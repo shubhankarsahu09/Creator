@@ -19,9 +19,9 @@ export default function CreatorWebsitePage() {
   const getPlans = () => {
     if (formData.currency === 'INR') {
       return [
-        { id: 'Plan 1', price: '₹99', title: 'Basic', desc: '2 pages: 1st contact form (customizable), 2nd media kit.' },
-        { id: 'Plan 2', price: '₹299', title: 'Standard', desc: '4 pages: 1st contact form (customizable), 2nd Beacon Media Kit, 3rd & 4th anything you want (customizable).' },
-        { id: 'Plan 3', price: '₹599', title: 'Premium', desc: 'Any number of pages: contact page, media kit, and all customizable pages you want.' },
+        { id: 'Plan 1', price: '₹199', title: 'Basic', desc: '2 pages: 1st contact form (customizable), 2nd media kit.' },
+        { id: 'Plan 2', price: '₹399', title: 'Standard', desc: '4 pages: 1st contact form (customizable), 2nd Beacon Media Kit, 3rd & 4th anything you want (customizable).' },
+        { id: 'Plan 3', price: '₹799', title: 'Premium', desc: 'Any number of pages: contact page, media kit, and all customizable pages you want.' },
       ];
     }
     return [
