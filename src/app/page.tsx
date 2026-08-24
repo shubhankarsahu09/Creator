@@ -312,7 +312,7 @@ export default function Home() {
               </Link>
 
               <a 
-                href="https://discord.gg/xGKRWCPxn"
+                href="https://discord.gg/jgVxPz4D2"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`${styles.ctaBtn} ${styles.ctaAnimate}`}
