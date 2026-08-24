@@ -57,20 +57,23 @@
 }
 
 /* ===== CTA BUTTON ===== */
-.ctaBtn { position: relative; overflow: hidden; display: inline-flex; align-items: center; border: none; background: none; cursor: pointer; border-radius: 9999px; padding: 8px; gap: 12px; }
+.ctaBtn { position: relative; overflow: hidden; display: inline-flex; align-items: center; border: none; background: none; cursor: pointer; border-radius: 9999px; padding: 8px; gap: 8px; max-width: 100%; }
 .ctaBtnBg {
   position: absolute; top: 5px; bottom: 5px; left: 8px;
-  width: calc(100% - 8px - 8px - 48px - 12px);
+  width: calc(100% - 8px - 8px - 40px - 8px);
   border-radius: 9999px; background: white; z-index: 0;
   transition: width 0.4s cubic-bezier(0.25,0.46,0.45,0.94);
 }
-@media (min-width: 768px) { .ctaBtnBg { width: calc(100% - 8px - 8px - 54px - 12px); } }
+@media (min-width: 768px) {
+  .ctaBtn { gap: 12px; }
+  .ctaBtnBg { width: calc(100% - 8px - 8px - 54px - 12px); }
+}
 .ctaBtn:hover .ctaBtnBg { width: calc(100% - 16px); }
-.ctaBtnText { position: relative; z-index: 1; color: #111111; font-weight: 500; font-size: 16px; padding: 12px 32px; white-space: nowrap; }
-@media (min-width: 768px) { .ctaBtnText { font-size: 18px; padding: 16px 40px; } }
+.ctaBtnText { position: relative; z-index: 1; color: #111111; font-weight: 500; font-size: 13px; padding: 10px 16px; white-space: normal; line-height: 1.3; text-align: left; flex: 1; }
+@media (min-width: 768px) { .ctaBtnText { font-size: 18px; padding: 16px 40px; white-space: nowrap; flex: none; line-height: normal; } }
 .ctaBtnCircle {
   position: relative; z-index: 1; display: flex; align-items: center; justify-content: center;
-  width: 48px; height: 48px; border-radius: 50%; background: #75C5DE; flex-shrink: 0;
+  width: 40px; height: 40px; border-radius: 50%; background: #75C5DE; flex-shrink: 0;
   transition: transform 0.4s cubic-bezier(0.25,0.46,0.45,0.94);
 }
 @media (min-width: 768px) { .ctaBtnCircle { width: 54px; height: 54px; } }
@@ -239,7 +242,7 @@
 
 /* ===== HERO ===== */
 .hero {
-  position: relative; width: 100%; overflow: hidden;
+  position: relative; width: 100%; overflow-x: hidden; overflow-y: auto;
   background: #E4E4E4; min-height: 100vh;
 }
 @media (min-width: 768px) { .hero { height: 100vh; min-height: 800px; } }
