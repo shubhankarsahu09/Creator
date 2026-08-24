@@ -242,8 +242,8 @@
 
 /* ===== HERO ===== */
 .hero {
-  position: relative; width: 100%; overflow-x: hidden; overflow-y: auto;
-  background: #E4E4E4; min-height: 100vh;
+  position: relative; width: 100%; overflow: hidden;
+  background: #E4E4E4; height: 100vh;
 }
 @media (min-width: 768px) { .hero { height: 100vh; min-height: 800px; } }
 
