@@ -297,8 +297,10 @@ export default function Home() {
                 </span>
               </Link>
               
-              <Link 
-                href="/creator-website"
+              <a 
+                href="https://builder-psi-hazel.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className={`${styles.ctaBtn} ${styles.ctaAnimate}`}
                 style={{ animationDelay: '1.3s' }}
               >
@@ -309,7 +311,7 @@ export default function Home() {
                     <path d="M5 13L13 5M13 5H6M13 5V12" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </span>
-              </Link>
+              </a>
 
               <a 
                 href="https://discord.gg/jgVxPz4D2"
