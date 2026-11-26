@@ -57,7 +57,7 @@
 }
 
 /* ===== CTA BUTTON ===== */
-.ctaBtn { position: relative; overflow: hidden; display: inline-flex; align-items: center; border: none; background: none; cursor: pointer; border-radius: 9999px; padding: 8px; gap: 8px; max-width: 100%; }
+.ctaBtn { position: relative; overflow: hidden; display: inline-flex; align-items: center; border: none; background: none; cursor: pointer; border-radius: 9999px; padding: 8px; gap: 8px; max-width: 100%; text-decoration: none; }
 .ctaBtnBg {
   position: absolute; top: 5px; bottom: 5px; left: 8px;
   width: calc(100% - 8px - 8px - 40px - 8px);
