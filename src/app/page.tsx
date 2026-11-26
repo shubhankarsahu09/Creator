@@ -314,7 +314,7 @@ export default function Home() {
               </a>
 
               <a 
-                href="https://discord.gg/jgVxPz4D2"
+                href="https://discord.gg/2n8aCwbsGS"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`${styles.ctaBtn} ${styles.ctaAnimate}`}
